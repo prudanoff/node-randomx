@@ -37,7 +37,7 @@ npm i
 ```
 That's it! 
 
-###Examples
+### Examples
 There are two files:
 * [example.js](example.js) - simple usage of RandomX.
 * [index.js](index.js) - "PoW-miner" example. You can set `target` which represents how many leading zeroes you want to get in your block's hash.
