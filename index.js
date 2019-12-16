@@ -1,6 +1,15 @@
 var rx = require('./build/Release/addon');
 let crypto = require('crypto');
 
+	//mine        mining mode: 2080 MiB
+	//verify      verification mode: 256 MiB
+	//jit         JIT compiled mode (default: interpreter)
+	//secure      W^X policy for JIT pages (default: off)
+	//largePages  use large pages (default: small pages)
+	//softAes     use software AES (default: hardware AES)
+	//ssse3       use optimized Argon2 for SSSE3 CPUs
+	//avx2        use optimized Argon2 for AVX2 CPUs
+	
 function difficulty(h){
 	let count = 0;
 	let i = 0;
@@ -18,7 +27,7 @@ let key = "0410591dc8b3bba89f949212982f05deeb4a1947e939c62679dfc7610c62";
 let vm;
 console.log("Starting RandomX virtual machine...");
 try{
-	vm = rx.RandomxVM(key);
+	vm = rx.RandomxVM(key, ["jit", "ssse3"]);
 }
 catch(e){
 	console.log(e);
@@ -26,7 +35,7 @@ catch(e){
 }
 let hash;
 let total = 0;
-let target = 4;
+let target = 5;
 
 console.log("Start hashing...");
 for(let i = 0; i < 100; i++){

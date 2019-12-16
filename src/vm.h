@@ -1,11 +1,12 @@
 #pragma once
 
 #include <napi.h>
-#include "../../src/randomx.h"
+#include "../randomx.h"
 #include <stdexcept>
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 
 class NrandomxVM : public Napi::ObjectWrap<NrandomxVM> {
     public:

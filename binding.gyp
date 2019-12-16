@@ -16,13 +16,22 @@
       ],
       'dependencies': ["<!(node -p \"require('node-addon-api').gyp\")"],
       "target_name": "addon",
+      'conditions': [
+          ['OS=="linux"', {
+            "libraries": [
+              "../librandomx.a"
+            ],
+          }],
+          ['OS=="win"', {
+            "libraries": [
+              "../randomx.lib"
+            ],
+          }],
+       ],
       "sources": [  
         "./src/addon.cc",
         "./src/vm.cc"
-      ],
-      "libraries": [
-        "../librandomx.a"
-      ],
+      ],      
     }
   ]
 }

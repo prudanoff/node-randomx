@@ -4,8 +4,6 @@ NodeJS addon for RandomX https://github.com/tevador/RandomX
 RandomX is a blockchain PoW consensus algorithm developed for CPU mining.
 This simple code helps you tu use RandomX C++ library in your Nodejs projects. 
 
-Note: it works in "miner" mode with 2Gb RAM by default. You can manually set all flags in `./src/addon.cc` file.
-
 ### How to use
 Build RandomX from sources:
 ```
